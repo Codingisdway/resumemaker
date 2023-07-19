@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resume Maker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container" id="CVform">
+        <h1 class="text-center my-3">Resume Generator</h1>
+    <p class="text-center">-by SAHIL</p>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Personal Information</h3>
+            <div class="form-group mt-3">
+                <label for="">First Name</label>
+                <input type="text" id="nameFF" class="form-control" placeholder="name">
+            </div>
+            <div class="form-group mt-3">
+                <label for="">Last Name</label>
+                <input type="text" id="nameLF" class="form-control" placeholder="title">
+            </div>
+            <div class="form-group mt-3">
+                <label for="">Contact Number</label>
+                <input type="text" id="contactF" class="form-control" placeholder="+91 0000 000 000">
+            </div>
+            <div class="form-group mt-3">
+                <label for="">Adress</label>
+                <textarea  
+                type="text" 
+                id="addressF" 
+                class="form-control" 
+                placeholder="example st. ,
+India."
+                ></textarea>
+            </div>
+            <div class="form-group mt-3">
+                <label for="">Select your profile picture</label>
+                <input type="file" id="mypic" class="form-control mt-3">
+            </div>
+
+            <h5 class="my-3">Important Links</h5>
+            <div class="form-group mt-3">
+                <label for="">Linked-IN</label>
+                <input type="text" id="linkedF" class="form-control" placeholder="Enter here">
+            </div>
+            <div class="form-group mt-3">
+                <label for="">Github</label>
+                <input type="text" id="gitF" class="form-control" placeholder="Enter here">
+            </div>
+            
+        </div>
+        <div class="col-md-6">
+            <h3>Professional Information</h3>
+
+            <div class="form-group mt-3">
+                <label for="nameF">Objective</label>
+                <textarea  
+                type="text" 
+                id="objF" 
+                rows="5"
+                class="form-control" 
+                placeholder="enter here"
+                ></textarea>
+            </div>
+
+            <div class="form-group  mt-3" id="we">
+                <label for="">Work Experience</label>
+                <textarea placeholder="enter here" class="form-control workField" rows="3" ></textarea>
+                <div class="container text-center mt-2" id="weaddbtn">
+                    <button onclick="addnewwork()" class="btn btn-primary btn-sm">Add</button>
+                </div>
+            </div>
+            
+            <div class="form-group  mt-3" id="eq">
+                <label for="">Academic Qualifications</label>
+                <textarea placeholder="enter here" class="form-control eduField" rows="3" ></textarea>
+                <div class="container text-center mt-2" id="eqaddbtn">
+                    <button onclick="addneweduq()" class="btn btn-primary btn-sm">Add</button>
+                </div>
+            </div>
+        </div>
+        <div class="container text-center mt-4">
+            <button onclick="generateCV()" class="btn btn-primary btn-lg">Generate</button>
+        </div>
+    </div>
+    </div>
+
+    <div class="container" id="CVoutput">
+        <div class="row">
+            <div class="col-md-4 text-center py-5">
+                <img src="profilepic.jpeg" id="picT">
+                <div class="container">
+                    <p id="name1T">Sahil Sheikh</p>
+                    <p id="contactT">+91 0000 000 000</p>
+                    <p id="addressT">Sector 5, Noida , India.</p>
+                    <hr/>
+
+                    <p>Links : </p>
+                    <p id="linkedT"><a href="">https://www.linkedin.com/login</a></p>
+                    <p id="githubT"><a href="">https://github.com/</a></p>
+                </div>
+            </div>
+            <div class="col-md-8 py-5">
+                <h1 class="text-center" id="name2T" style="font-weight: 980;">Sahil Sheikh</h1>
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Objective</h3>
+                        
+                    </div>
+                    <p id="objT">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi incidunt optio rerum eaque ab? Provident, maxime commodi! Natus expedita in impedit id assumenda magnam sapiente quos ipsum error! Ab, laudantium!</p>
+                </div>
+
+                <div class="card mt-4 ">
+                    <div class="card-header">
+                        <h3>Work Experience</h3>
+                    </div>
+                    <ul id="weT">
+                        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, temporibus.</li>
+                        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, temporibus.</li>
+                        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, temporibus.</li>
+                    </ul>
+                </div>
+
+                <div class="card mt-4 ">
+                    <div class="card-header">
+                        <h3>Education Qualifications</h3>
+                    </div>
+                    <ul id="eqT">
+                        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, temporibus.</li>
+                        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, temporibus.</li>
+                        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, temporibus.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container mt-3 text-center">
+                <button onclick="printCV()" class="btn btn-primary btn-lg">Print</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>

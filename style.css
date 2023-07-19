@@ -1,0 +1,16 @@
+#CVform{
+
+}
+
+#CVoutput{
+    display: none;
+}
+
+#picT{
+    border-radius: 50%;
+    width: 200px;
+}
+
+.background{
+    background-color: blue;
+}
